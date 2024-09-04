@@ -18,6 +18,9 @@ class UserProfile(models.Model):
     drinking = models.BooleanField(default=False)
     smoking = models.BooleanField(default=False)
     pet = models.BooleanField(default=False)
+    photo1 = models.ImageField(upload_to='user_photos/', blank=True, null=True)
+    photo2 = models.ImageField(upload_to='user_photos/', blank=True, null=True)
+    photo3 = models.ImageField(upload_to='user_photos/', blank=True, null=True)
 
     def __str__(self):
         return f"{self.name}'s profile"
@@ -34,3 +37,6 @@ class RoomDetails(models.Model):
     rent = models.PositiveBigIntegerField()
     room_type = models.CharField(max_length=100, choices=ROOM_TYPE)
     building_type = models.CharField(max_length=100, choices=BUILDING_TYPE)
+    photo1 = models.ImageField(upload_to='room_photos/', blank=True, null=True)
+    photo2 = models.ImageField(upload_to='room_photos/', blank=True, null=True)
+    photo3 = models.ImageField(upload_to='room_photos/', blank=True, null=True)
